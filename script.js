@@ -22,16 +22,10 @@ select.addEventListener('change', function(e) {
 function calculateTotal() {
     const selectedSeats = container.querySelectorAll('.seat.selected');
 
-    const selectedSeatsArr = [];
-    const seatsArr = [];
-
-    selectedSeats.forEach(function(seat) {
-        selectedSeatsArr.push(seat);
-    });
-
-    seats.forEach(function(seat) {
-        seatsArr.push(seat);
-    });
+    const selectedSeatsArr = [...selectedSeats];
+    const seatsArr = [...seats];
+    console.log(selectedSeatsArr);
+    console.log(seatsArr);
 
     // [1,3,5]
     let selectedSeatIndexs = selectedSeatsArr.map(function(seat) {
