@@ -9,11 +9,11 @@ body {
     color: #fff;
 }
 
-.seat{
+.seat {
     background-color: #444451;
     height: 15px;
     width: 15px;
-    margin: 8px;
+    margin: 3px;
     border-radius: 5px;
 }
 

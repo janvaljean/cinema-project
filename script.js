@@ -10,7 +10,8 @@ calculateTotal();
 container.addEventListener('click', function(e) {
    if(e.target.classList.contains('seat') && !e.target.classList.contains('reserved')) {
        e.target.classList.toggle('selected');
-       calculateTotal()      
+       calculateTotal()   
+       console.log(e.target);   
     }
 });
 
@@ -21,13 +22,16 @@ select.addEventListener('change', function(e) {
 function calculateTotal() {
     const selectedSeats = container.querySelectorAll('.seat.selected');
 
-    const selectedSeatsArr = [...selectedSeats];
-    const seatsArr = [...seats];
-   
+    const selectedSeatsArr = [];
+    const seatsArr = [];
 
-    
+    selectedSeats.forEach(function(seat) {
+        selectedSeatsArr.push(seat);
+    });
 
-
+    seats.forEach(function(seat) {
+        seatsArr.push(seat);
+    });
 
     // [1,3,5]
     let selectedSeatIndexs = selectedSeatsArr.map(function(seat) {
